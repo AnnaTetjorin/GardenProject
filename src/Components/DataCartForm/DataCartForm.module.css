@@ -53,6 +53,7 @@
   border-radius: 6px;
   background: rgb(255, 255, 255);
   transition: transform 0.3s ease-in-out;
+  font-family: "Montserrat", sans-serif;
 }
 
 .allThreeInputs:hover {
