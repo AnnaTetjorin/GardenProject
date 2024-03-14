@@ -1,10 +1,9 @@
-
-import { AllCategories } from "../Components/AllCategories/AllCategories"
-
+import { AllCategories } from "../Components/AllCategories/AllCategories";
 
 export const CategoriesPage = () => {
-    return (
-        <main>
-            <AllCategories /></main>
-    )
-}
+  return (
+    <main>
+      <AllCategories />
+    </main>
+  );
+};

@@ -4,8 +4,6 @@
   align-items: center;
   margin: 0 auto;
   max-width: 1350px;
-  margin-top: 40px;
-  padding: 0 40px 40px 40px;
 }
 
 .titleDescription {
@@ -45,20 +43,23 @@
   background: #282828;
 }
 
-@media (min-width: 360px) and (max-width: 510px) {
-  .line {
-    display: none;
-  }
+/* MOBILE */
 
-  .titleDescription {
-    margin: 30px auto;
-  }
-
+@media (min-width: 330px) and (max-width: 800px) {
   .titleBtn {
     display: none;
   }
-
+  .line {
+    display: none;
+  }
   .titleDescription {
-    margin-bottom: 40px;
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 330px) and (max-width: 1385px) {
+  .titleTextWrapper {
+    padding: 20px;
+    margin-top: 40px;
   }
 }

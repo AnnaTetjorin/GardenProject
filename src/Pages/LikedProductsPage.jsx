@@ -10,7 +10,7 @@ import { deleteFromLikedProducts } from "../slices/likedProductsSlice";
 import { FilterBar } from "./../Components/FilterBar/FilterBar";
 import style from "./LikedProductsPage.module.css";
 
-export const LikedProductsPage = ({ title, id }) => {
+export const LikedProductsPage = ({ title, id, isLoading }) => {
   const likedProducts = useSelector(
     (state) => state.likedProducts.likedProducts
   );
@@ -54,7 +54,7 @@ export const LikedProductsPage = ({ title, id }) => {
     <section>
       <BreadCrumbs />
       <TitleBar
-        title="Favourite Products"
+        title="Favourites"
         linkTo="/products"
         buttonText="Back to the store"
       />

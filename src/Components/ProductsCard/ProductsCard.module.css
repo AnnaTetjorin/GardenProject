@@ -1,5 +1,5 @@
 .saleImg {
-  max-width: 312px;
+  width: 311px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-bottom: 20px;
@@ -8,9 +8,19 @@
   object-fit: cover;
 }
 
+.saleCardTextPriceWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0px;
+  height: auto;
+}
+
 .saleCard:hover {
   transform: scale(1.1);
 }
+
 .saleCardText {
   font-size: 19px;
   font-weight: 500;
@@ -82,29 +92,6 @@
   display: flex;
 }
 
-.productCartButton {
-  visibility: hidden;
-  padding: 16px 56px;
-  width: 284px;
-  height: 58px;
-  border: none;
-  border-radius: 6px;
-  font-size: 20px;
-  font-weight: 600;
-  cursor: pointer;
-  background-color: #339933;
-  color: #ffffff;
-  position: absolute;
-  bottom: 177px;
-  left: 13px;
-}
-
-.productCartButton:hover {
-  visibility: visible;
-  background-color: #282828;
-  color: #ffffff;
-}
-
 .btnAddToCard {
   width: 284px;
   cursor: pointer;
@@ -148,3 +135,21 @@
   top: 10px;
   cursor: pointer;
 }
+
+@media (min-width: 360px) and (max-width: 710px) {
+  .saleCard:hover {
+    transform: none;
+  }
+}
+
+/* @media (hover: hover) {
+  .saleCard:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media (hover: none) {
+  .saleCard:active {
+    transform: scale(1.1);
+  }
+} */

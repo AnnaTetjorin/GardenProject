@@ -37,33 +37,24 @@ export const Header = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  const handleDiscountClick = () => {
-    if (!isLoading && !isError && products.length > 0) {
-      const discountProducts = products.filter((p) => p.discont_price);
-      const randomProduct =
-        discountProducts[Math.floor(Math.random() * discountProducts.length)];
-      setModalProduct(randomProduct);
-      setIsModalOpen(true);
-    }
-  };
-
   return (
     <header className={`${style.headerWrapper} `}>
       <DiscountModal isOpen={isModalOpen} onRequestClose={toggleModal} />
       <div className={style.logoToggleWrapper}>
-        <img className={style.logo} src={logo} alt="Logo" />
+        <Link to="/">
+          <img className={style.logo} src={logo} alt="Logo" />
+        </Link>
         <div
           className={`${style.themaWrapper} ${
             theme === "light" ? style.activeBg : ""
           }`}
         >
-          <div className={style.themaDiv}>
+          <div className={style.themaDiv} onClick={toggleThemeHandler}>
             <img className={style.modeImg} src={sun} alt="sun" />
             <button
               className={`${style.modeBtn} ${
                 theme === "dark" ? style.activeDarkMode : ""
               }`}
-              onClick={toggleThemeHandler}
             >
               {theme === "dark" ? (
                 <img src={elipseLight} alt="elipseLight" />
@@ -75,7 +66,7 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <nav className={style.navMenu} onClick={toggleMenu}>
+      <nav className={style.navMenu}>
         <button className={style.discountButton} onClick={toggleModal}>
           1 day discount!
         </button>
@@ -91,7 +82,9 @@ export const Header = () => {
           >
             <Link
               to="/"
-              className={location.pathname === "/" ? style.active : ""}
+              className={`${style.listStyleMain} ${
+                location.pathname === "/" ? style.active : ""
+              }`}
             >
               Main Page
             </Link>
@@ -103,9 +96,9 @@ export const Header = () => {
           >
             <Link
               to="/categories"
-              className={
+              className={`${style.listStyleCategories} ${
                 location.pathname === "/categories" ? style.active : ""
-              }
+              }`}
             >
               Categories
             </Link>
@@ -117,7 +110,9 @@ export const Header = () => {
           >
             <Link
               to="/products"
-              className={location.pathname === "/products" ? style.active : ""}
+              className={`${style.listStyleProducts} ${
+                location.pathname === "/products" ? style.active : ""
+              }`}
             >
               All products
             </Link>
@@ -129,7 +124,9 @@ export const Header = () => {
           >
             <Link
               to="/sales"
-              className={location.pathname === "/sales" ? style.active : ""}
+              className={`${
+                location.pathname === "/sales" ? style.active : ""
+              } ${style.listStyleSales}`}
             >
               All sales
             </Link>

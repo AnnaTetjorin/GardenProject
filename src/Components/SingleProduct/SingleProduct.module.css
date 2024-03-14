@@ -15,6 +15,7 @@
   display: flex;
   justify-content: space-between;
   align-items: start;
+  margin-right: 20px;
 }
 
 .productTextDescriptionMain {
@@ -228,6 +229,12 @@
   max-height: 80vh;
 }
 
+.countInput::-webkit-inner-spin-button,
+.countInput::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .productDescription {
   margin-top: 52px;
   max-width: 600px;
@@ -287,10 +294,9 @@
   width: 700px;
   height: 700px;
   border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
 }
-/**.imgProduct:hover {
-  transform: scale(1.1);
-}*/
 
 .buttonIcon {
   border: none;
@@ -387,7 +393,21 @@
 @media screen and (max-width: 1340px) {
   .productDescription {
     margin-top: 52px;
+    max-width: 550px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .productDescription {
+    margin-top: 52px;
     max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .productDescription {
+    margin-top: 52px;
+    max-width: 470px;
   }
 }
 
@@ -407,7 +427,7 @@
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
   .imgProduct {
     width: 500px;
   }
@@ -431,20 +451,15 @@
   }
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1040px) {
   .imgProduct {
-    width: 460px;
-    height: 660px;
+    width: 440px;
+    height: 640px;
   }
-  .divPrices {
-    margin-top: 20px;
-  }
-  .counterUndButton {
+  .counterAndButton {
     margin-top: 30px;
+    flex-direction: column;
   }
-}
-
-@media screen and (max-width: 980px) {
   .divCounter .minusButton {
     width: 56px;
   }
@@ -457,15 +472,18 @@
   .divCounter .plusButton {
     width: 56px;
   }
-  .counterUndButton {
-    margin-top: 20px;
-  }
   .containerTitlePrice .h2TitleText {
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 50px;
+  }
+  .titleAndHeart {
+    max-width: 360px;
   }
   .productDescription .textColor {
     margin-top: -20px;
+  }
+  .productDescription {
+    max-width: 350px;
   }
   .imgProduct {
     width: 430px;
@@ -474,14 +492,11 @@
   .divWithPriceCounterDescription {
     margin-left: -15px;
   }
-  .counterUndButton {
-    flex-direction: column;
-  }
 }
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 945px) {
   .productDescription {
-    margin-top: 60px;
+    margin-top: 130px;
   }
   .divCounter .minusButton {
     width: 74px;
@@ -495,7 +510,7 @@
   .divCounter .plusButton {
     width: 74px;
   }
-  .counterUndButton .addGreenButton {
+  .counterAndButton .addGreenButton {
     padding: 16px 26px;
   }
   .productItemImage .imgProduct {
@@ -514,62 +529,86 @@
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 890px) {
   .productItemImage .imgProduct {
-    width: 440px;
+    width: 400px;
     height: 480px;
   }
   .productDescription {
-    margin-left: -450px;
+    margin-left: -430px;
+  }
+  .divWithPriceCounterDescription {
+    margin-left: -40px;
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 816px) {
   .productItemImage .imgProduct {
     width: 400px;
     height: 460px;
   }
   .productDescription {
-    margin-left: -450px;
+    margin-left: -420px;
     margin-top: 120px;
   }
   .h2TitleText {
-    font-size: 34px;
+    font-size: 30px;
+    max-width: 210px;
+  }
+  .divWithPriceCounterDescription {
+    margin-left: -20px;
   }
 }
 
 @media screen and (max-width: 750px) {
   .productItemImage .imgProduct {
-    width: 380px;
+    width: 340px;
     height: 450px;
   }
   .productDescription {
-    margin-left: -400px;
+    margin-left: -360px;
+  }
+  .h2TitleText {
+    font-size: 30px;
+    max-width: 180px;
+  }
+  .divWithPriceCounterDescription {
+    margin-left: -35px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .productItemImage .imgProduct {
+    width: 340px;
+    height: 450px;
+  }
+  .productDescription {
+    margin-left: -350px;
   }
   .h2TitleText {
     font-size: 30px;
   }
   .divWithPriceCounterDescription {
-    margin-left: -30px;
+    margin-left: -45px;
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 679px) {
   .mainCategoriesToolsButtons {
     display: none;
   }
   .productItemImage .imgProduct {
-    width: 350px;
+    width: 300px;
     height: 380px;
   }
   .productDescription {
-    margin-left: -370px;
+    margin-left: -310px;
   }
   .h2TitleText {
     font-size: 25px;
   }
   .divWithPriceCounterDescription {
-    margin-left: -40px;
+    margin-left: -50px;
   }
   .productDescription {
     margin-top: 100px;
@@ -583,24 +622,27 @@
   }
   .productDescription {
     margin-top: 50px;
-    margin-left: -350px;
+    margin-left: -300px;
   }
   .divPrices {
     margin-top: 5px;
   }
+  .divWithPriceCounterDescription {
+    margin-left: -60px;
+  }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 630px) {
   .productItemImage .imgProduct {
-    width: 280px;
-    height: 340px;
+    width: 260px;
+    height: 350px;
   }
   .productDescription {
     margin-top: 50px;
-    margin-left: -320px;
+    margin-left: -280px;
   }
   .h2TitleText {
-    font-size: 20px;
+    font-size: 25px;
   }
   .divCounter .minusButton {
     width: 54px;
@@ -613,10 +655,10 @@
   }
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 600px) {
   .productItemImage .imgProduct {
     width: 200px;
-    height: 300px;
+    height: 310px;
   }
   .productDescription {
     margin-top: 50px;
@@ -643,7 +685,7 @@
   }
 }
 
-@media screen and (max-width: 490px) {
+@media screen and (max-width: 559px) {
   .divWithPriceCounterDescription {
     margin-left: -70px;
   }
@@ -660,20 +702,21 @@
   }
 }
 
-@media screen and (max-width: 455px) {
+@media screen and (max-width: 529px) {
   .divSingleProduct .saleBlock {
     flex-direction: column;
   }
   .productDescription {
     margin-top: 50px;
     margin-left: 10px;
+    max-width: 370px;
   }
   .divWithPriceCounterDescription {
     margin: 10px auto;
-    margin-top: -450px;
+    margin-top: -400px;
   }
   .productItemImage .imgProduct {
-    width: 370px;
+    width: 380px;
     margin-top: 60px;
   }
   .saleBlock .productItemImage .imgProduct {
@@ -685,13 +728,15 @@
     font-size: 28px;
   }
   .percentagePrice {
-    margin-top: -330px;
-    margin-left: 50px;
+    margin-top: -310px;
+    margin-left: 60px;
+    height: 27px;
   }
-  .counterUndButton {
-    margin: 5px auto;
-    justify-content: center;
-    align-items: center;
+  .btnAddToLikes {
+    margin-top: -370px;
+  }
+  .divCounter {
+    margin: 20px auto;
   }
   .divCounter .minusButton {
     width: 74px;
@@ -706,15 +751,56 @@
     margin-left: 100px;
     margin-bottom: 30px;
   }
+  .h2TitleText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 425px) {
   .productItemImage .imgProduct {
     width: 330px;
-    margin-top: 70px;
+    margin-top: 90px;
   }
   .percentagePrice {
     margin-left: 20px;
+  }
+  .titleAndHeart {
+    max-width: 330px;
+  }
+}
+
+@media screen and (max-width: 402px) {
+  .productItemImage .imgProduct {
+    width: 300px;
+    margin-top: 90px;
+  }
+  .percentagePrice {
+    margin-left: -10px;
+  }
+  .titleAndHeart {
+    max-width: 300px;
+  }
+  .productDescription {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .productItemImage .imgProduct {
+    width: 280px;
+    margin-top: 90px;
+  }
+  .percentagePrice {
+    margin-top: -290px;
+    margin-left: -30px;
+  }
+  .titleAndHeart {
+    max-width: 280px;
+  }
+  .productDescription {
+    width: 280px;
   }
 }
 
@@ -736,7 +822,7 @@
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1112px) {
   .imgProduct {
     width: 530px;
   }

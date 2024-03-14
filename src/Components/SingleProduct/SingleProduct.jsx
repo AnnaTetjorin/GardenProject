@@ -4,14 +4,18 @@ import { useParams } from "react-router-dom";
 import heartRed from "../../assets/images/LikesMedia/heartRed.svg";
 import heartWhite from "../../assets/images/LikesMedia/heartWhite.svg";
 import { useGetProductByIdQuery } from "../../slices/apiSlice";
-import { addProductToCart } from "../../slices/cartSlice";
+import {
+  addProductToCart,
+  saveCartToLocalStorage,
+} from "../../slices/cartSlice";
 import {
   addToLikedProducts,
   deleteFromLikedProducts,
 } from "../../slices/likedProductsSlice";
 import { BreadCrumbs } from "../BreadCrumbs/BreadCrumbs";
 import { Button } from "../Button/Button";
-import style from "./singleProduct.module.css";
+import ModalSingleProduct from "./../ModalSingleProduct/ModalSingleProduct";
+import style from "./SingleProduct.module.css";
 
 export const SingleProduct = () => {
   const { id: routeId } = useParams();
@@ -23,6 +27,10 @@ export const SingleProduct = () => {
   const theme = useSelector((state) => state.theme.theme);
   const likedItems = useSelector((state) => state.likedProducts.likedProducts);
   const [isLiked, setIsLiked] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     if (data && data.length > 0) {
@@ -47,6 +55,7 @@ export const SingleProduct = () => {
     if (data && data.length > 0) {
       dispatch(addProductToCart({ ...data[0], quantity }));
     }
+    dispatch(saveCartToLocalStorage());
   };
 
   const switcherText = (event) => {
@@ -79,6 +88,19 @@ export const SingleProduct = () => {
   function calculateDiscountPercent(price, discountPrice) {
     return Math.round(((price - discountPrice) / price) * 100);
   }
+  const [open, setOpen] = useState(false); //хук сохраняет и заменяет состояние действия
+
+  const handleOnClick = () => {
+    handleAddToCart();
+    handleOpen();
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
 
   return (
     <>
@@ -179,6 +201,7 @@ export const SingleProduct = () => {
                           theme === "light" ? style.dark : style.light
                         }`}
                         type="number"
+                        inputMode="numeric"
                         value={quantity}
                         onChange={(e) => setQuantity(parseInt(e.target.value))}
                       />
@@ -194,10 +217,14 @@ export const SingleProduct = () => {
 
                     <div className={style.divButton}>
                       <Button
-                        className={style.addGreenButton}
-                        buttonClass="primary"
+                        className={style.addGreenButtonSingle}
+                        buttonClass="addGreenButtonSingle"
                         text="Add to cart"
-                        onClick={handleAddToCart}
+                        onClick={handleOnClick}
+                      />
+                      <ModalSingleProduct
+                        open={open}
+                        handleClose={handleClose}
                       />
                     </div>
                   </div>
