@@ -75,6 +75,7 @@
   font-weight: 500;
   background: transparent;
   transition: transform 0.3s ease-in-out;
+  font-family: "Montserrat", sans-serif;
 }
 .allThreeInputs:hover {
   transform: scale(1.1);
@@ -165,35 +166,6 @@
   }
 }
 
-/**@media screen and (max-width: 1100px) {
-  .imgWrapper .formHands {
-    object-fit: cover;
-    width: 444px;
-    height: 293px;
-    margin-left: -16px;
-    margin-bottom: -281px;
-  }
-
-  .allThreeInputs {
-    width: 95%;
-  }
-
-  .greenDiv {
-    max-height: 434px;
-    margin: 0px 20px;
-  }
-  .divForm {
-    justify-content: space-around;
-  }
-
-  .h2TitleForm {
-    font-size: 64px;
-  }
-  .divForm .divInputs {
-    width: 450px;
-    height: 276px;
-  }
-}*/
 
 @media screen and (max-width: 1100px) {
   .divInputs {
