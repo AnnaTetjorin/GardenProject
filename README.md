@@ -32,3 +32,22 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+# Подключение backend'а
+
+Данный backend позволит вам выполнить проект.
+
+[Ссылка на backend](https://github.com/HaykInanc/telran_project_backend)
+
+Это API, которое вам необходимо скачать и запустить у себя локально. Вам не нужно его менять или дорабатывать. Данный проект будет представлять backend вашего проекта.
+
+## Команды для запуска API
+
+### `npm i`
+
+Установите необходимые зависимости.
+
+### `npm run dev`
+
+Запустите API в режиме разработки.
